@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>practical javascript</title>
+</head>
+<style type="text/css">
+	.table{
+      
+      width: 100%;
+      border-collapse: collapse;
+
+	}
+
+	.table th{
+       background-color: #eee;
+       padding: 5px;
+       border: solid thin #ddd;
+	}
+
+	.table td{
+		border: solid thin #ddd;
+		padding: 5px;
+
+	}
+
+	.hide{
+
+		display: none;
+	}
+
+	.selected{
+		border: solid 2px blue;
+		background-color: #c2bdd7;
+
+	}
+
+	.sub_menu > div:hover{
+
+		background-color: #12499d;
+		color: white;
+
+
+	}
+
+	.sub_menu > div{
+		padding: 10px;
+		background-color: #ddd;
+		margin-bottom: 2px;
+		text-align: center;
+		cursor: pointer;
+		transition: all .3s ease;
+
+
+	}
+
+	.sub_menu{
+		width: 150px;
+		min-height: 200px;
+		background-color: #eee;
+		box-shadow: 0px 0px 6px #aaa ;
+		position: absolute;
+		left: 100px;
+		top: 200px;
+		
+
+	}
+
+	.main_menu{
+		width: 180px;
+		min-height: 300px;
+		background-color: #eee;
+		box-shadow: 0px 0px 6px #aaa ;
+		position: absolute;
+		right: 50px;
+		top: 7.8em;
+		border-radius: 1.5em;
+	}
+
+	.main_menu_button{
+		
+		position: absolute;
+		cursor: pointer;
+		top: 4.5em;
+		right: 6px;
+	}
+
+	.main_menu > span{
+		padding: 10px;
+		background-color: black;
+		margin-bottom: 2px;
+		text-align: center;
+		display: block;
+		color: whitesmoke;
+		border-radius: 1.5em;
+	}
+
+	.main_menu > div{
+		padding: 10px;
+		background-color: #ddd;
+		margin-bottom: 2px;
+		text-align: center;
+		cursor: pointer;
+		transition: all .3s ease;
+	}
+
+	.main_menu > div:hover{
+
+		background-color: #12499d;
+		color: white;
+		border-radius: 1.5em;
+
+
+	}
+
+</style>
+<body style="font-family: verdana; font-size: 13px;">
+
+	<h2 style="text-align: center; position: relative;">Employees</h2>
+	<div>
+		<b>Selected Cell</b> <br>
+		Row: <span class="js-row-info"></span><br>
+		Column: <span class="js-column-info"></span><br>
+		Column Name: <span class="js-column-name-info"></span><br>
+
+
+		<div class="main_menu_button" onclick="show_main_menu(true)">
+
+			<svg width = "44" height = "44" viewBox = "0 0 24 24"> <path d= "M24 6h-24v-4h24v4m0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+			</div>
+			
+			<div class="js_main-menu main_menu hide"  >
+				<span>Main Menu</span>
+				<div onclick="collect_data()">Save Data</div>
+				<div onclick="send_data({data_type:'read'});">Reload Data</div>
+
+
+		</div>	
+
+
+		
+		
+	</div>
+	<table class="table">
+		<thead class="js-thead">
+			<tr> <th>heading</th> </tr>
+		</thead>
+		<tbody class="js-tbody" ondblclick="edit(event)" >
+          
+		<tr> <td>heading</td> </tr>	
+
+			
+		</tbody>
+	</table>
+	<div class="js-input-holder">
+		<input type="text" name="" value="" style="width: 98%; height: 98%;" class="js-input hide" onblur="update_cell(event)">
+   </div>
+
+   <div class="js-sub-menu sub_menu hide"> 
+
+   	<div onclick="edit()" >Edit</div>
+   	<div onclick="delete_content()">Delete</div>
+
+
+   </div>
+</body>
+</html>
+
+<script src="main.js?makhulo">
+	
+</script>
